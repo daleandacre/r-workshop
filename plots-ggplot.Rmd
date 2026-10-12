@@ -1,0 +1,9 @@
+---
+title: "Creating graphs in R with `ggplot2"
+author: "Chase Anderson"
+date: "`r Sys.Date()`"
+output: html_document
+---
+# plots with ggplot2
+
+We are going to make plots in R and its going to be amazing
