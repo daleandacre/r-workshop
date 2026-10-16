@@ -5,3 +5,6 @@ but I'm completing their workdowns on RStudio as a part of my learning.
 Feel free to follow your own path at
 
 https://rstudio-conf-2020.github.io/r-for-excel/github.html
+
+
+We use the following data from the Santa Barbara Coastal Term Ecological Research and National  Oceanic and Atmospheric Administration in our analyses"
