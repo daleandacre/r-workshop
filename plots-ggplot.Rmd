@@ -7,3 +7,27 @@ output: html_document
 # plots with ggplot2
 
 We are going to make plots in R and its going to be amazing
+
+```{r}
+
+library(tidyverse)
+library(readxl)
+library(readr)
+library(here)
+
+
+ca_np <- read_csv(here("data", "ca_np.csv"))
+ci_np <- read_excel(here("data", "ci_np.xlsx"))
+
+gg_base <- ggplot(data = ci_np, aes(x = year, y = visitors))
+
+gg_base + 
+  geom_col(
+    aes(fill = visitors)
+  )
+
+#ggplot(data = ci_np, aes(x = year, y = visitors)) +
+ # geom_line()
+
+```
+
