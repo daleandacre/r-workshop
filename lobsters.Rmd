@@ -1,0 +1,24 @@
+---
+title: "pivot_lobsters.rmd"
+author: "Chase Anderson"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+``` {r}
+library(tidyverse)
+library(readxl)
+library(here)
+library(skimr) #install.packages('skimr')
+library(kableExtra) # install.packages('kableExtra')
+
+### Read in data
+lobsters <- read_xlsx(here("data/lobsters.xlsx"),skip = 4)
+
+#explore 
+
+```
