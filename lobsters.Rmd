@@ -36,6 +36,7 @@ sizeyear_summary
 ```
 
 There are `r nrow(lobsters)` total lobsters included in this report.
+Now there are `r count(lobsters)` total lobsters included in this report.
 
 ``` {r}
 
@@ -62,6 +63,14 @@ ggsave(here("Figures","lobsters-col.png"))
 
 ## saving 7x5 in image
   
+
+#lobsters %>%
+  #mutate(size_m = size_mm / 1000)
+
+lobsters_detailed <- lobsters %>%
+  mutate(size_m = size_mm / 1000,
+         millenia = 2000,
+         observer = "Allison Horst")
   
   
 ```
