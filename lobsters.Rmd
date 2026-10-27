@@ -17,7 +17,7 @@ library(skimr) #install.packages('skimr')
 library(kableExtra) # install.packages('kableExtra')
 
 ### Read in data
-lobsters <- read_xlsx(here("data/lobsters.xlsx"),skip = 4)
+lobsters <- read_xlsx(here("data/lobsters2.xlsx"),skip = 4)
 
 #explore 
 skimr::skim(lobsters)
@@ -26,7 +26,8 @@ sizeyear_summary <- lobsters %>%
   group_by(site, year) %>%
   summarize(count_by_year = n(),
             mean_size_mm = mean(size_mm, na.rm = TRUE),
-            sd_size_mm = sd(size_mm, na.rm=TRUE))
+            sd_size_mm = sd(size_mm, na.rm=TRUE)
+            median_size_mm = median(size_mm, na.rm = TRUE),)
 
 ##'summarise()' regrouping output by 'site' (overrides with '.groups' arguement)
 ##'inspect our new variable
@@ -45,7 +46,7 @@ siteyear_summary<- lobsters  %>%
             sd_size_mm = sd(size_mm,na.rm = TRUE),
             median_size_mm = median(size_mm, na.rm = TRUE))
 
-##  summarise()  regrouping output by `site` (override with `groups` arguement)
+##  summaries()  regrouping output by `site` (override with `groups` argument)
 
 ## a ggplot option
 ggplot(data = siteyear_summary, aes(x=year, y = median_size_mm,color = site))+ geom_line()
