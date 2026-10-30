@@ -72,4 +72,31 @@ inverts_moyr
 ```
 
 ``` {r}
+#uniting more than 2 columns
+inverts_triple_unite <- inverts_long %>%
+  tidyr::unite(col = "year_site_name",
+               c(year, site, common_name),
+               sep = "-")
+head(inverts_triple_unite)
+
+```
+
+```{r}
+inverts_sep <- inverts_unite %>%
+  tidyr::separate(site_year, into = c("my-site", "my_year"))
+
+head(inverts_sep)
+
+```
+
+``` {r}
+ca_abbr <- inverts %>%
+  mutate(
+    common_name = 
+      str_replace(common_name,
+                  pattern = "california",
+                  replacement = "CA")
+    
+  )
+
 ```
