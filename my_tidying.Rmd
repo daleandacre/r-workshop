@@ -54,5 +54,22 @@ names(inverts_wide)
 
 ``` {r}
 
+inverts_unite <- inverts_long %>%
+  unite(col = "site_year", #what to name the new united column
+        c(site, year),# The columns we'll unite (site, year)
+        sep = "_") # how to separate the things we're uniting
+inverts_unite
+```
+###Task
+Create a new object called 'inverts_moyr,' starting from inverts_long, that unites the month and year columns into a single column named "mo_yr", using a slash "/" as the separator. Then try updating the separator to something else! Like Hello
+``` {r}
+ inverts_moyr <- inverts_long %>%
+  unite(col = "mo_yr", #what to name the new united column
+  c(month, year),# The columns we'll unite (month, year)
+  sep = "/") # how to separate the things we're uniting
 
+inverts_moyr
+```
+
+``` {r}
 ```
